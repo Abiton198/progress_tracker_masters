@@ -1,6 +1,7 @@
 
 import './App.css'
-import { ProgressBar, ToDoList } from './components'
+import { ProgressBar, ToDoList, ToggleToDoListButton } from './components'
+import { AddTask } from './utils'
 
 function App() {
 
@@ -12,6 +13,8 @@ function App() {
       </p>
       <ToDoList/>
       <ProgressBar/>
+      <AddTask/>
+      <ToggleToDoListButton/>
     </>
   )
 }
