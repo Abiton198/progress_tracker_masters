@@ -1,5 +1,6 @@
 
 import './App.css'
+import { ProgressBar, ToDoList } from './components'
 
 function App() {
 
@@ -9,6 +10,8 @@ function App() {
       <p className="read-the-docs">
         Click here to check progress...
       </p>
+      <ToDoList/>
+      <ProgressBar/>
     </>
   )
 }
