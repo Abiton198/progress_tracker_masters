@@ -1,8 +1,34 @@
 
-function AddTaskInput() {
+/**
+ * AddTaskInput Component
+ * Renders an input field and button for adding new tasks.
+ *
+ * Props:
+ * - newTaskText (string): The current value of the task input field.
+ * - setNewTaskText (Function): Function to update the input field state.
+ * - handleAddTask (Function): Function to add a new task when the button is clicked.
+ */
+const AddTaskInput = ({ newTaskText, setNewTaskText, handleAddTask }) => {
   return (
-    <div>addTaskInput</div>
-  )
-}
+    <div className="flex mb-6">
+      {/* Input field for entering a new task */}
+      <input
+        type="text"
+        value={newTaskText}
+        onChange={(e) => setNewTaskText(e.target.value)}
+        placeholder="Add a new task"
+        className="border rounded-l-lg p-2 w-64 focus:outline-none"
+      />
 
-export default AddTaskInput
+      {/* Button to add the task */}
+      <button
+        onClick={handleAddTask}
+        className="bg-blue-500 text-white px-4 rounded-r-lg hover:bg-blue-600"
+      >
+        Add
+      </button>
+    </div>
+  );
+};
+
+export default AddTaskInput;

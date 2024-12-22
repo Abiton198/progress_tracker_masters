@@ -1,8 +1,8 @@
 // src/App.js
 
 import { useState } from 'react';
-import {ProgressBar, TodoList} from './components';
-import { calculateProgress } from './utils';
+import {ProgressBar, TodoList, AddTaskInput} from './components';
+import { calculateProgress, addTask, toggleTaskCompletion } from './utils';
 
 /**
  * App Component

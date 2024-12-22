@@ -1,6 +1,4 @@
 
-// src/components/TodoList.js
-
 /**
  * TodoList Component
  * Displays a list of tasks with options to mark them as complete or incomplete.
