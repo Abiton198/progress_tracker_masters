@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 /**
  * ProgressBar Component
  * Displays a circular progress bar that dynamically updates based on the provided progress percentage.
@@ -57,6 +57,11 @@ const ProgressBar = ({ progress }) => {
     </div>
   );
 };
+
+/** PropTypes for ProgressBar */
+ProgressBar.propTypes = {
+    progress: PropTypes.number.isRequired, // Ensures `progress` is a number and required.
+  };
 
 export default ProgressBar;
 

@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 /**
  * ToggleTodoListButton Component
  * Renders a button to toggle the visibility of the to-do list.
@@ -16,6 +16,12 @@ const ToggleTodoListButton = ({ showTodoList, setShowTodoList }) => {
       {showTodoList ? 'Hide To-Do List' : 'Show To-Do List'}
     </button>
   );
+};
+
+// Define prop types for the component
+ToggleTodoListButton.propTypes = {
+  showTodoList: PropTypes.bool.isRequired, // Must be a boolean and is required.
+  setShowTodoList: PropTypes.func.isRequired, // Must be a function and is required.
 };
 
 export default ToggleTodoListButton;

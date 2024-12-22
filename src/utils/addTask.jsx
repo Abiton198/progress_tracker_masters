@@ -5,7 +5,7 @@
  * @param {string} taskText - The text of the new task.
  * @returns {Array} - A new array with the added task.
  */
-export const addTask = (tasks, taskText) => {
+const addTask = (tasks, taskText) => {
   // Create a new task object with a unique ID, default completion status, and no completion date.
   const newTask = {
     id: Date.now(), // Generate a unique ID using the current timestamp.
@@ -17,3 +17,5 @@ export const addTask = (tasks, taskText) => {
   // Return the updated array of tasks with the new task appended.
   return [...tasks, newTask];
 };
+
+export default addTask; 

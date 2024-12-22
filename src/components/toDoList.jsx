@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 /**
  * TodoList Component
  * Displays a list of tasks with options to mark them as complete or incomplete.
@@ -43,6 +43,20 @@ const TodoList = ({ tasks, toggleTaskCompletion }) => {
       ))}
     </div>
   );
+};
+
+
+// Define PropTypes for the component
+TodoList.propTypes = {
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired, // Task ID must be a number
+      text: PropTypes.string.isRequired, // Task text must be a string
+      completed: PropTypes.bool.isRequired, // Completed status must be a boolean
+      dateCompleted: PropTypes.string, // Date completed is optional but must be a string if present
+    })
+  ).isRequired, // tasks must be an array of task objects
+  toggleTaskCompletion: PropTypes.func.isRequired, // Must be a function
 };
 
 export default TodoList;

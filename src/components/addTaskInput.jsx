@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 /**
  * AddTaskInput Component
  * Renders an input field and button for adding new tasks.
@@ -29,6 +29,13 @@ const AddTaskInput = ({ newTaskText, setNewTaskText, handleAddTask }) => {
       </button>
     </div>
   );
+};
+
+// Define prop types for the component
+AddTaskInput.propTypes = {
+  newTaskText: PropTypes.string.isRequired, // Must be a string and is required
+  setNewTaskText: PropTypes.func.isRequired, // Must be a function and is required
+  handleAddTask: PropTypes.func.isRequired, // Must be a function and is required
 };
 
 export default AddTaskInput;

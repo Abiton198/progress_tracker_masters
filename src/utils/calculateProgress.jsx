@@ -5,7 +5,7 @@
  * @returns {number} - The progress percentage (0 to 100).
  */
 
-export const calculateProgress = (tasks) => {
+const calculateProgress = (tasks) => {
   // Count the number of tasks that are completed.
   const completedTasks = tasks.filter((task) => task.completed).length;
 
@@ -16,3 +16,5 @@ export const calculateProgress = (tasks) => {
   return (completedTasks / tasks.length) * 100;
 
 };
+
+export default calculateProgress; 

@@ -7,7 +7,7 @@
  * @param {number} id - The ID of the task to toggle.
  * @returns {Array} - A new array of tasks with the updated completion status.
  */
-export const toggleTaskCompletion = (tasks, id) => {
+const toggleTaskCompletion = (tasks, id) => {
   // Map through the tasks to find and update the specified task.
   return tasks.map((task) => {
     if (task.id === id) {
@@ -29,3 +29,5 @@ export const toggleTaskCompletion = (tasks, id) => {
     return task; // Return the unchanged task for all others.
   });
 };
+
+export default toggleTaskCompletion; 
