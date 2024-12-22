@@ -1,7 +1,7 @@
 // src/App.js
 
 import { useState } from 'react';
-import {ProgressBar, TodoList, AddTaskInput} from './components';
+import {ProgressBar, TodoList, AddTaskInput, ToggleTodoListButton} from './components';
 import { calculateProgress, addTask, toggleTaskCompletion } from './utils';
 
 /**
@@ -59,7 +59,7 @@ function App() {
       />
 
       {/* Button to toggle the visibility of the to-do list */}
-      <ToggleTodoListButton
+      < ToggleTodoListButton
         showTodoList={showTodoList}
         setShowTodoList={setShowTodoList}
       />
