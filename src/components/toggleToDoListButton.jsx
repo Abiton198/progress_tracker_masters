@@ -13,7 +13,7 @@ const ToggleTodoListButton = ({ showTodoList, setShowTodoList }) => {
       onClick={() => setShowTodoList(!showTodoList)} // Toggle the visibility state.
       className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700"
     >
-      {showTodoList ? 'Hide To-Do List' : 'Show To-Do List'}
+      {showTodoList ? 'CheckList hide' : 'Show CheckList'}
     </button>
   );
 };
