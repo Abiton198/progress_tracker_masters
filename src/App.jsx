@@ -11,7 +11,8 @@ import { calculateProgress, addTask, toggleTaskCompletion } from './utils';
 function App() {
   // State to manage the list of tasks.
   const [tasks, setTasks] = useState([
-    { id: 1, text: 'NLP Specialization', completed: true, dateCompleted: '2024-01-15' },
+
+    { id: 1, text: 'NLP Specialization - ',   completed: false, dateCompleted: null },
     { id: 2, text: 'Deep Learning Course', completed: false, dateCompleted: null },
     { id: 3, text: 'Practice Machine Learning on Kaggle', completed: false, dateCompleted: null },
   ]);
@@ -44,7 +45,7 @@ function App() {
   const progressPercentage = calculateProgress(tasks);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
+    <div className="min-h-screen bg-gray-800 flex flex-col items-center py-10">
       {/* Application title */}
       <h1 className="text-3xl font-bold mb-6">NLP Masters Degree Preparation</h1>
 

@@ -1,67 +1,44 @@
-import PropTypes from 'prop-types';
-/**
- * ProgressBar Component
- * Displays a circular progress bar that dynamically updates based on the provided progress percentage.
- * The bar changes color based on the progress level: red (0-25%), yellow (26-50%), blue (51-75%), green (76-100%).
- *
- * Props:
- * - progress (number): The completion percentage (0 to 100).
- */
+import PropTypes from "prop-types";
+import image from "../img/abiton.jpeg";
+import "../index.css"; // Import the CSS file for styles
 
 const ProgressBar = ({ progress }) => {
-  /**
-   * Determines the color of the progress bar based on the progress percentage.
-   * @param {number} progress - The progress percentage.
-   * @returns {string} - The Tailwind CSS class for the color.
-   */
-  const getColor = (progress) => {
-    if (progress <= 25) return 'text-red-500';
-    if (progress <= 50) return 'text-yellow-500';
-    if (progress <= 75) return 'text-blue-500';
-    return 'text-green-500';
-  };
-
-  // Get the appropriate color class for the current progress.
-  const progressStyle = getColor(progress);
+  // Clamp the progress value to be between 0 and 100
+  const clampedProgress = Math.min(100, Math.max(0, progress));
 
   return (
-    <div className="relative w-40 h-40 mb-6">
-      {/* SVG for the circular progress bar */}
-      <svg className="w-full h-full">
-        {/* Background circle (gray) */}
-        <circle
-          cx="50%"
-          cy="50%"
-          r="70"
-          strokeWidth="10"
-          className="text-gray-300 fill-none"
-        />
-
-        {/* Foreground circle (progress indicator) */}
-        <circle
-          cx="50%"
-          cy="50%"
-          r="70"
-          strokeWidth="10"
-          strokeDasharray="440" // Total circumference of the circle.
-          strokeDashoffset={440 - (440 * progress) / 100} // Offset based on progress.
-          className={`${progressStyle} fill-none`} // Dynamic color based on progress.
-          style={{ transition: 'stroke-dashoffset 0.5s ease' }} // Smooth transition for progress updates.
-        />
-      </svg>
-
-      {/* Centered percentage text */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <span className="text-2xl font-bold">{Math.round(progress)}%</span>
+    <div className="progress-bar-container">
+      {/* Circular image */}
+      <div className="progress-bar-image">
+        <img src={image} alt="Progress Indicator" />
       </div>
+
+      {/* Progress bar */}
+      <div className="progress-bar-track">
+        <div
+          className={`progress-bar-fill`}
+          style={{
+            width: `${clampedProgress}%`,
+            backgroundColor:
+              clampedProgress <= 25
+                ? "#f87171" // Red
+                : clampedProgress <= 50
+                ? "#facc15" // Yellow
+                : clampedProgress <= 75
+                ? "#60a5fa" // Blue
+                : "#34d399", // Green
+          }}
+        ></div>
+      </div>
+
+      {/* Progress percentage */}
+      <div className="progress-bar-text">{Math.round(clampedProgress)}% Completed</div>
     </div>
   );
 };
 
-/** PropTypes for ProgressBar */
 ProgressBar.propTypes = {
-    progress: PropTypes.number.isRequired, // Ensures `progress` is a number and required.
-  };
+  progress: PropTypes.number.isRequired,
+};
 
 export default ProgressBar;
-
